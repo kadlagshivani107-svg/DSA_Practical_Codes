@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+void bubble_sort(int a[],int n)
+{
+    for(int i=0;i<n-1;i++)
+    {
+        for(int j=0;j<n-1;j++)
+        {
+            if (a[j]>a[j+1])
+            {
+                int temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+}
+int main() {
+    int n;
+    int a[10];
+    cout<<"enter the size of the array:";
+    cin>>n;
+    cout<<"enter "<<n<<" integers in any order:"<<endl;
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    bubble_sort(a,n);
+    cout<<"sorted array:";
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<"";
+    }
+    cout<<endl;
+    return 0;
+
+}
+/*PS D:\shivani kadlag> g++ bubble.cpp
+PS D:\shivani kadlag> ./bubble      
+enter the size of the array:7
+enter7integers in any order:
+67 78 98 34 93 14 56
+sorted array:14345667789398
+PS D:\shivani kadlag> 
+*/
